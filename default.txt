@@ -1,0 +1,10 @@
+VERSION = 1,
+
+mods
+{
+    mod = ZomboidRLBridge,
+}
+
+maps
+{
+}

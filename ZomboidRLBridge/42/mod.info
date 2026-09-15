@@ -1,0 +1,4 @@
+name=Zomboid RL Bridge
+id=ZomboidRLBridge
+description=Bridge mod for Project Zomboid reinforcement learning experiments.
+versionMin=42.0
