@@ -1,0 +1,22 @@
+[
+  {
+    "model": "runs\\navigation-v2-resume-check\\latest.zip",
+    "success_rate": 0.65,
+    "terminal_reasons": {
+      "success": 65,
+      "stalled": 35
+    },
+    "mean_reward": 7.208410304507807,
+    "mean_steps": 20.29
+  },
+  {
+    "model": "runs\\navigation-v2-obstacles-20260918\\best_stage_2.zip",
+    "success_rate": 0.84,
+    "terminal_reasons": {
+      "success": 84,
+      "stalled": 16
+    },
+    "mean_reward": 10.301571558271199,
+    "mean_steps": 14.8
+  }
+]

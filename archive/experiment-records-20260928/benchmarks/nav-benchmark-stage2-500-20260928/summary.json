@@ -1,0 +1,32 @@
+[
+  {
+    "model": "..\\archive\\experiment-records-20260928\\navigation\\navigation-v2-resume-check\\latest.zip",
+    "success_rate": 0.658,
+    "terminal_reasons": {
+      "success": 329,
+      "stalled": 171
+    },
+    "mean_reward": 7.286529576444485,
+    "mean_steps": 19.862
+  },
+  {
+    "model": "..\\archive\\experiment-records-20260928\\obstacle-navigation\\navigation-v2-obstacles-20260918\\best_stage_2.zip",
+    "success_rate": 0.786,
+    "terminal_reasons": {
+      "success": 393,
+      "stalled": 107
+    },
+    "mean_reward": 9.44226053189662,
+    "mean_steps": 16.86
+  },
+  {
+    "model": "..\\archive\\experiment-records-20260928\\obstacle-navigation\\navigation-v2-obstacles-20260918\\latest.zip",
+    "success_rate": 0.83,
+    "terminal_reasons": {
+      "success": 415,
+      "stalled": 85
+    },
+    "mean_reward": 10.339500717628697,
+    "mean_steps": 13.446
+  }
+]

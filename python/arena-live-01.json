@@ -1,0 +1,11 @@
+{
+  "x": 2068.064453,
+  "y": 6025.480469,
+  "z": 0.0,
+  "radius": 8,
+  "min_distance": 2,
+  "max_distance": 5,
+  "max_steps": 100,
+  "action_duration": 0.15,
+  "goal_radius": 0.75
+}

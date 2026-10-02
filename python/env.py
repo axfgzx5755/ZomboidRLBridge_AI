@@ -34,6 +34,8 @@ class ZomboidNavigationEnv(gym.Env):
         max_steps: int = 500,
         reward_config: RewardConfig = RewardConfig(),
         reader: TelemetryReader | None = None,
+        move_fn=None,
+        stop_fn=None,
     ) -> None:
         super().__init__()
         self.target_x, self.target_y = map(float, target)
@@ -46,6 +48,8 @@ class ZomboidNavigationEnv(gym.Env):
         self.max_steps = max_steps
         self.reward_config = reward_config
         self.reader = reader or TelemetryReader()
+        self._move = move_fn or move
+        self._stop = stop_fn or stop
         self.action_space = spaces.Discrete(len(Movement))
         # dx, dy, z, health, distance-to-target
         self.observation_space = spaces.Box(
@@ -79,7 +83,7 @@ class ZomboidNavigationEnv(gym.Env):
         options: dict[str, Any] | None = None,
     ) -> tuple[np.ndarray, dict[str, Any]]:
         super().reset(seed=seed)
-        stop()
+        self._stop()
         if options and "target" in options:
             self.target_x, self.target_y = map(float, options["target"])
         self._sample = self.reader.read()
@@ -96,8 +100,12 @@ class ZomboidNavigationEnv(gym.Env):
         if self._sample is None:
             raise RuntimeError("reset() must be called before step()")
         previous = self._sample
-        move(Movement(int(action)), self.action_duration)
-        current = self.reader.wait_for_update(previous, timeout=self.telemetry_timeout)
+        if not self.action_space.contains(action):
+            raise ValueError(f"invalid action: {action}")
+        self._move(Movement(int(action)), self.action_duration)
+        # Discard snapshots captured while the movement key was still held.
+        barrier = self.reader.read()
+        current = self.reader.wait_for_update(barrier, timeout=self.telemetry_timeout)
         self._sample = current
         self._steps += 1
 
@@ -123,5 +131,5 @@ class ZomboidNavigationEnv(gym.Env):
         return self._observation(current), result.reward, terminated, truncated, info
 
     def close(self) -> None:
-        stop()
+        self._stop()
         super().close()

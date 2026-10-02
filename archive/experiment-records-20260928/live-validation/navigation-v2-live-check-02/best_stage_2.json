@@ -1,0 +1,20 @@
+{
+  "schema": "navigation-v2-134",
+  "arena": {
+    "x": 2093,
+    "y": 6056,
+    "z": 0.0,
+    "radius": 8,
+    "min_distance": 1.0,
+    "max_distance": 3.0,
+    "max_steps": 100,
+    "action_duration": 0.15,
+    "goal_radius": 0.75,
+    "allow_obstacles": true
+  },
+  "live": true,
+  "stage": 2,
+  "seed": 42,
+  "cycle": 5,
+  "timesteps": 61133
+}

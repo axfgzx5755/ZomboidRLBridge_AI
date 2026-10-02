@@ -1,0 +1,30 @@
+{
+  "world": "RL_Test-character1",
+  "scope": "observed ground-floor tiles only; not whole-building completion",
+  "rooms": [
+    {
+      "building": "2038:6001",
+      "room": "2038:6001:0:6473954529116234",
+      "name": "cafe",
+      "known_walkable_tiles": 79,
+      "visited_tiles": 36,
+      "status": "in_progress"
+    },
+    {
+      "building": "2038:6001",
+      "room": "2038:6001:0:6473954529116236",
+      "name": "cafekitchen",
+      "known_walkable_tiles": 17,
+      "visited_tiles": 17,
+      "status": "known_tiles_covered"
+    }
+  ],
+  "buildings": [
+    {
+      "building": "2038:6001",
+      "known_rooms": 2,
+      "closed_known_doors": 0,
+      "status": "incomplete"
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-local LOG_INTERVAL_SECONDS = 0.5
+require "Navigation"
+local LOG_INTERVAL_SECONDS = 0.1
+local lastConsoleLogTime = 0.0
 local lastLogTime = 0.0
 local lastMissingPlayerLogTime = 0.0
 local lastInvalidPayloadLogTime = 0.0
@@ -27,11 +29,19 @@ local function safeGetPlayer()
     return nil
 end
 
+local function finiteNumber(raw)
+    local value = tonumber(raw)
+    if value == nil or value ~= value or value == math.huge or value == -math.huge then
+        return nil
+    end
+    return value
+end
+
 local function normalizeHealth(rawHealth)
     if rawHealth == nil then
         return nil
     end
-    local health = tonumber(rawHealth)
+    local health = finiteNumber(rawHealth)
     if health == nil then
         return nil
     end
@@ -48,7 +58,7 @@ local function getPlayerCoords(player)
     local x = player.getX and player:getX() or nil
     local y = player.getY and player:getY() or nil
     local z = player.getZ and player:getZ() or nil
-    return x, y, z
+    return finiteNumber(x), finiteNumber(y), finiteNumber(z)
 end
 
 local function getPlayerHealth(player)
@@ -68,7 +78,6 @@ end
 local function buildTelemetryPayload()
     local player = safeGetPlayer()
     if player == nil then
-        print("[ZomboidRLBridge] buildTelemetryPayload: getPlayer() returned nil")
         return {
             x = 0.0, y = 0.0, z = 0.0, health = 1.0,
             missingPlayer = true, invalidPlayerValues = false,
@@ -78,10 +87,6 @@ local function buildTelemetryPayload()
     local x, y, z = getPlayerCoords(player)
     local health = getPlayerHealth(player)
     if x == nil or y == nil or z == nil or health == nil then
-        print(string.format(
-            "[ZomboidRLBridge] buildTelemetryPayload: player present but invalid values x=%s y=%s z=%s health=%s",
-            tostring(x), tostring(y), tostring(z), tostring(health)
-        ))
         return {
             x = 0.0, y = 0.0, z = 0.0, health = 1.0,
             missingPlayer = false, invalidPlayerValues = true,
@@ -89,9 +94,9 @@ local function buildTelemetryPayload()
     end
 
     return {
-        x = tonumber(x) or 0.0,
-        y = tonumber(y) or 0.0,
-        z = tonumber(z) or 0.0,
+        x = x,
+        y = y,
+        z = z,
         health = health,
         missingPlayer = false,
         invalidPlayerValues = false,
@@ -126,9 +131,15 @@ local function writeTelemetryFile(payload)
         hasLoggedWriterReady = true
     end
 
+    local nav = "null"
+    if not payload.missingPlayer and not payload.invalidPlayerValues then
+        local ok, value = pcall(ZomboidRLNavigation.scan, payload.x, payload.y, payload.z, 2)
+        if ok then nav = value end
+    end
     local json = string.format(
-        '{"x":%.6f,"y":%.6f,"z":%.6f,"health":%.6f}\n',
-        payload.x, payload.y, payload.z, payload.health
+        '{"x":%.6f,"y":%.6f,"z":%.6f,"health":%.6f,"missingPlayer":%s,"invalidPlayerValues":%s,"navigation":%s}\n',
+        payload.x, payload.y, payload.z, payload.health,
+        tostring(payload.missingPlayer), tostring(payload.invalidPlayerValues), nav
     )
     local ok, writeErr = pcall(function()
         file:write(json)
@@ -154,10 +165,13 @@ local function logTelemetry()
     end
 
     writeTelemetryFile(payload)
+    if now - lastConsoleLogTime >= 5.0 then
+    lastConsoleLogTime = now
     print(string.format(
         "[ZomboidRLBridge] x=%.3f y=%.3f z=%.3f health=%.3f missingPlayer=%s",
         payload.x, payload.y, payload.z, payload.health, tostring(payload.missingPlayer)
     ))
+    end
 end
 
 local function onClientTick()
@@ -173,4 +187,3 @@ end
 
 Events.OnTick.Add(onClientTick)
 print("[ZomboidRLBridge] Telemetry initialized")
-

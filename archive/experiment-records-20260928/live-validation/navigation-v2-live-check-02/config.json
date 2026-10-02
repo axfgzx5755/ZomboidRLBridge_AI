@@ -1,0 +1,23 @@
+{
+  "schema": "navigation-v2-134",
+  "arena": {
+    "x": 2093,
+    "y": 6056,
+    "z": 0.0,
+    "radius": 8,
+    "min_distance": 1.0,
+    "max_distance": 3.0,
+    "max_steps": 100,
+    "action_duration": 0.15,
+    "goal_radius": 0.75,
+    "allow_obstacles": true
+  },
+  "live": true,
+  "seed": 42,
+  "stage": 2,
+  "cycles": 1,
+  "steps_per_cycle": 256,
+  "eval_episodes": 3,
+  "resume": "runs\\navigation-v2-live-check-01\\interrupted.zip",
+  "transfer": false
+}

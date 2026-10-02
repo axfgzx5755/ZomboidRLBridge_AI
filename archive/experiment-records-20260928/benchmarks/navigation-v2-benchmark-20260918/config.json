@@ -1,0 +1,23 @@
+{
+  "models": [
+    "runs\\navigation-v2-resume-check\\latest.zip",
+    "runs\\navigation-v2-obstacles-20260918\\best_stage_2.zip",
+    "runs\\navigation-v2-obstacles-20260918\\latest.zip"
+  ],
+  "arena": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "radius": 8.0,
+    "min_distance": 2.0,
+    "max_distance": 5.0,
+    "max_steps": 100,
+    "action_duration": 0.15,
+    "goal_radius": 0.75,
+    "allow_obstacles": true
+  },
+  "stage": 2,
+  "seed": 200000,
+  "episodes": 100,
+  "backend": "synthetic"
+}

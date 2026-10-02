@@ -1,0 +1,18 @@
+{
+  "model": "runs\\navigation-v2-obstacles-20260918\\best_stage_2.zip",
+  "arena": {
+    "x": 2086,
+    "y": 6055,
+    "z": 0.0,
+    "radius": 8.0,
+    "min_distance": 2.0,
+    "max_distance": 5.0,
+    "max_steps": 100,
+    "action_duration": 0.15,
+    "goal_radius": 0.75,
+    "allow_obstacles": true
+  },
+  "episodes": 5,
+  "seed": 400000,
+  "live": true
+}

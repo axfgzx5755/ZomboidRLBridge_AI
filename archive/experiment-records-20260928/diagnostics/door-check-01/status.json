@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "error_type": "BridgeError",
+  "error": "Lua reset_local: arena must be within 50 tiles of the loaded player"
+}

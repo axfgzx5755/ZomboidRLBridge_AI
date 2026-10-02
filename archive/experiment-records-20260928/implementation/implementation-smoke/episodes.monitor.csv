@@ -1,0 +1,26 @@
+#{"t_start": 1789491163.2978942, "env_id": "None"}
+r,l,t,is_success,terminal_reason
+-4.435098,100,2.883807,False,max_steps
+-19.302913,76,2.927141,False,out_of_bounds
+-2.083154,100,3.158786,False,max_steps
+13.498706,11,3.174482,True,success
+-14.053699,84,3.234117,False,out_of_bounds
+-19.229408,75,3.286304,False,out_of_bounds
+-1.500902,100,3.612817,False,max_steps
+-0.654162,100,3.691452,False,max_steps
+-2.549137,100,3.766282,False,max_steps
+-0.59991,100,3.990828,False,max_steps
+-13.001415,59,4.029589,False,out_of_bounds
+-12.449294,67,4.077503,False,out_of_bounds
+-16.774546,87,4.287559,False,out_of_bounds
+-2.327875,100,4.347902,False,max_steps
+-18.587713,84,4.399335,False,out_of_bounds
+2.207894,100,4.621219,False,max_steps
+-6.011558,100,4.707391,False,max_steps
+-0.957787,100,4.971795,False,max_steps
+-1.969976,100,5.048592,False,max_steps
+-11.832641,46,5.082687,False,out_of_bounds
+13.030785,65,5.141523,True,success
+11.208587,82,5.372595,True,success
+-13.518602,94,5.431941,False,out_of_bounds
+11.571914,63,5.471093,True,success

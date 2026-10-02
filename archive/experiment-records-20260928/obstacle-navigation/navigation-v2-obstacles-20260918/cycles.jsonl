@@ -1,0 +1,5 @@
+{"cycle": 5, "stage": 2, "success_rate": 0.8333333333333334, "timesteps": 81920}
+{"cycle": 6, "stage": 2, "success_rate": 0.9, "timesteps": 102144}
+{"cycle": 7, "stage": 2, "success_rate": 0.9, "timesteps": 122368}
+{"cycle": 8, "stage": 2, "success_rate": 0.7, "timesteps": 142592}
+{"cycle": 9, "stage": 2, "success_rate": 0.7333333333333333, "timesteps": 162816}

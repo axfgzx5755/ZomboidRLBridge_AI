@@ -1,0 +1,4 @@
+#{"t_start": 1789491244.3956287, "env_id": "None"}
+r,l,t,is_success,terminal_reason
+-0.305237,100,1.308105,False,max_steps
+0.608989,100,1.346773,False,max_steps

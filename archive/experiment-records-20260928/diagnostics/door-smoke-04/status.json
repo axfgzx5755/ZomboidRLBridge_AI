@@ -1,0 +1,5 @@
+{
+  "status": "error",
+  "error_type": "BridgeError",
+  "error": "Lua door_close: reset position must be beside the door"
+}

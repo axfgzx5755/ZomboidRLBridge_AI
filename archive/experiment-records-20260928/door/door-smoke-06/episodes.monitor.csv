@@ -1,0 +1,6 @@
+#{"t_start": 1790591405.650309, "env_id": "None"}
+r,l,t,is_success,terminal_reason,stage
+-4.117499,52,18.947829,False,stalled,0
+-3.872664,53,36.032504,False,stalled,0
+-6.255611,44,51.452809,False,stalled,0
+-4.759556,88,80.723932,False,stalled,0

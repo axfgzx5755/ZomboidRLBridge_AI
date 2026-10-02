@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "cycle": 4,
+  "error_type": "ActionError",
+  "error": "game lost focus; movement stopped"
+}

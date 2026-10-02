@@ -1,0 +1,63 @@
+{
+  "initial": {
+    "steps": 0,
+    "is_success": false,
+    "terminal_reason": "running",
+    "stage": 0,
+    "backend": "live",
+    "target": [
+      2128.5,
+      6012.5
+    ],
+    "position": [
+      2128.0,
+      6014.0
+    ],
+    "health": 1.0,
+    "distance": 1.5811388300841898,
+    "door_open": false,
+    "opened_by_agent": false,
+    "crossed_door": false
+  },
+  "opened": {
+    "steps": 1,
+    "is_success": false,
+    "terminal_reason": "running",
+    "stage": 0,
+    "backend": "live",
+    "target": [
+      2128.5,
+      6012.5
+    ],
+    "position": [
+      2128.0,
+      6014.0
+    ],
+    "health": 1.0,
+    "distance": 1.5811388300841898,
+    "door_open": true,
+    "opened_by_agent": true,
+    "crossed_door": false
+  },
+  "reward": 1.98,
+  "reset": {
+    "steps": 0,
+    "is_success": false,
+    "terminal_reason": "running",
+    "stage": 0,
+    "backend": "live",
+    "target": [
+      2128.5,
+      6012.5
+    ],
+    "position": [
+      2128.0,
+      6014.0
+    ],
+    "health": 1.0,
+    "distance": 1.5811388300841898,
+    "door_open": false,
+    "opened_by_agent": false,
+    "crossed_door": false
+  }
+}

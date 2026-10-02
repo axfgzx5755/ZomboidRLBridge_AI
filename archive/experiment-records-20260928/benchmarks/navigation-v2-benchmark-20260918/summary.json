@@ -1,0 +1,32 @@
+[
+  {
+    "model": "runs\\navigation-v2-resume-check\\latest.zip",
+    "success_rate": 0.69,
+    "terminal_reasons": {
+      "success": 69,
+      "stalled": 31
+    },
+    "mean_reward": 7.808684871351983,
+    "mean_steps": 18.31
+  },
+  {
+    "model": "runs\\navigation-v2-obstacles-20260918\\best_stage_2.zip",
+    "success_rate": 0.85,
+    "terminal_reasons": {
+      "success": 85,
+      "stalled": 15
+    },
+    "mean_reward": 10.478475397358718,
+    "mean_steps": 16.08
+  },
+  {
+    "model": "runs\\navigation-v2-obstacles-20260918\\latest.zip",
+    "success_rate": 0.84,
+    "terminal_reasons": {
+      "success": 84,
+      "stalled": 16
+    },
+    "mean_reward": 10.526097479846431,
+    "mean_steps": 13.22
+  }
+]

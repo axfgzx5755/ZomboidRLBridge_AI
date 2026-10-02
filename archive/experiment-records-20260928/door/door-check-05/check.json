@@ -1,0 +1,63 @@
+{
+  "initial": {
+    "steps": 0,
+    "is_success": false,
+    "terminal_reason": "running",
+    "stage": 0,
+    "backend": "live",
+    "target": [
+      2128.5,
+      6012.5
+    ],
+    "position": [
+      2128.5,
+      6014.5
+    ],
+    "health": 1.0,
+    "distance": 2.0,
+    "door_open": false,
+    "opened_by_agent": false,
+    "crossed_door": false
+  },
+  "opened": {
+    "steps": 1,
+    "is_success": false,
+    "terminal_reason": "running",
+    "stage": 0,
+    "backend": "live",
+    "target": [
+      2128.5,
+      6012.5
+    ],
+    "position": [
+      2128.5,
+      6014.5
+    ],
+    "health": 1.0,
+    "distance": 2.0,
+    "door_open": true,
+    "opened_by_agent": true,
+    "crossed_door": false
+  },
+  "reward": 1.98,
+  "reset": {
+    "steps": 0,
+    "is_success": false,
+    "terminal_reason": "running",
+    "stage": 0,
+    "backend": "live",
+    "target": [
+      2128.5,
+      6012.5
+    ],
+    "position": [
+      2128.5,
+      6014.5
+    ],
+    "health": 1.0,
+    "distance": 2.0,
+    "door_open": false,
+    "opened_by_agent": false,
+    "crossed_door": false
+  }
+}

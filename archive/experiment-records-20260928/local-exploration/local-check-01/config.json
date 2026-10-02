@@ -1,0 +1,8 @@
+{
+  "world": "RL_Test-character1",
+  "minutes": 1.0,
+  "countdown": 15,
+  "min_health": 0.8,
+  "memory": "runs\\local-memory.sqlite3",
+  "output": "runs\\local-check-01"
+}

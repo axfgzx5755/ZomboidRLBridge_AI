@@ -1,0 +1,4 @@
+-r requirements.txt
+lupa>=2.8,<3
+scipy>=1.14,<2
+matplotlib>=3.10,<4
